@@ -7,7 +7,9 @@ const Layout = () => {
     <div>
       <Navbar></Navbar>
       {/* ========dynamic content====== */}
-      <Outlet></Outlet>
+      <div className="w-11/12 mx-auto">
+        <Outlet></Outlet>
+      </div>
       {/* ========dynamic content====== */}
       <Footer></Footer>
     </div>
