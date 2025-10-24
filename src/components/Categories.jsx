@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Categories = ({ categoriesLoaderData }) => {
   return (
-    <div role="tablist" className="tabs tabs-border mb-12">
+    <div role="tablist" className="tabs tabs-border mb-4">
       {categoriesLoaderData.map((categoryType) => (
         <Link
           to={`/cardsCategory/${categoryType.category}`}
