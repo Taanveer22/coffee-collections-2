@@ -1,10 +1,14 @@
 import { Outlet } from "react-router-dom";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
+import { Toaster } from "react-hot-toast";
 
 const Layout = () => {
   return (
-    <div>
+    <>
+      {/* ====react hot toast component==== */}
+      <Toaster></Toaster>
+      
       {/* =====when navbar use fixed position===== */}
       <div className="h-28">
         <Navbar></Navbar>
@@ -17,7 +21,7 @@ const Layout = () => {
 
       {/* ===footer section=== */}
       <Footer></Footer>
-    </div>
+    </>
   );
 };
 
