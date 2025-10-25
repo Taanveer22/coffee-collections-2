@@ -9,7 +9,7 @@ const Card = ({ coffeeItem }) => {
         <div className="card-body">
           <h2 className="card-title">
             {name}
-            <div className="badge badge-secondary">{category}</div>
+            <div className="badge badge-info">{category}</div>
           </h2>
           <p>{description}</p>
           <div className="card-actions justify-between">
