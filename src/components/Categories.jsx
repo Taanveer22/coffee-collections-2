@@ -12,7 +12,7 @@ const Categories = ({ categoriesLoaderData }) => {
               role="tab"
               className={({ isActive }) =>
                 isActive
-                  ? "tab tab-active text-xl font-medium"
+                  ? "tab tab-active text-green-500 text-xl font-medium"
                   : "tab text-xl font-medium"
               }
             >

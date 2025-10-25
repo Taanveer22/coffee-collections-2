@@ -1,2 +1,7 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+/* for smooth behavior in webpage */
+html{
+  overflow-y: scroll;
+}

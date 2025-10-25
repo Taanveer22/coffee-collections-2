@@ -5,12 +5,17 @@ import Navbar from "./components/Navbar";
 const Layout = () => {
   return (
     <div>
-      <Navbar></Navbar>
+      {/* =====when navbar use fixed position===== */}
+      <div className="h-28">
+        <Navbar></Navbar>
+      </div>
+
       {/* ========dynamic content====== */}
       <div className="w-11/12 mx-auto">
         <Outlet></Outlet>
       </div>
-      {/* ========dynamic content====== */}
+
+      {/* ===footer section=== */}
       <Footer></Footer>
     </div>
   );
