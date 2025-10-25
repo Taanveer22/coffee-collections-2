@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Heading from "../components/Heading";
-import { getFromFavourite } from "../utilities";
+import { getFromFavourite, removeFromFavourite } from "../utilities";
 import Card from "../components/Card";
 
 const Dashboard = () => {
@@ -10,6 +10,12 @@ const Dashboard = () => {
     // console.log(favouriteList);
     setCoffees(favouriteList);
   }, []);
+
+  const handleRemoveFromFavourite = (id) => {
+    removeFromFavourite(id);
+    const favouriteList = getFromFavourite();
+    setCoffees(favouriteList);
+  };
   return (
     <>
       <div className="mb-12">
@@ -19,7 +25,11 @@ const Dashboard = () => {
         ></Heading>
         <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {coffees.map((coffeeItem) => (
-            <Card key={coffeeItem.id} coffeeItem={coffeeItem}></Card>
+            <Card
+              key={coffeeItem.id}
+              coffeeItem={coffeeItem}
+              handleRemoveFromFavourite={handleRemoveFromFavourite}
+            ></Card>
           ))}
         </div>
       </div>

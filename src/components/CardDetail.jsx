@@ -3,8 +3,10 @@ import { useLoaderData, useParams } from "react-router-dom";
 import { addToFavourite, getFromFavourite } from "../utilities";
 
 const CardDetail = () => {
-  const { cardId } = useParams();
+  const params = useParams();
+  const { cardId } = params;
   const parsedId = parseInt(cardId);
+  // console.log(params);
   // console.log(cardId);
   // console.log(parsedId);
 
