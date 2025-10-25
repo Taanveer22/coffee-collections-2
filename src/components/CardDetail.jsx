@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
-import { addToFavourite } from "../utilities";
-// import {  getFromFavourite } from "../utilities";
+import { addToFavourite, getFromFavourite } from "../utilities";
 
 const CardDetail = () => {
-  const [coffee, setCoffe] = useState({});
-
   const { cardId } = useParams();
   const parsedId = parseInt(cardId);
   // console.log(cardId);
@@ -14,11 +11,19 @@ const CardDetail = () => {
   const coffeesLoaderData = useLoaderData();
   // console.log(coffeesLoaderData);
 
+  const [coffee, setCoffe] = useState({});
+  const [isFavourite, setIsFavourite] = useState(false);
+
   useEffect(() => {
-    const cardDetailData = coffeesLoaderData.find(
+    const findedCard = coffeesLoaderData.find(
       (coffeeItem) => coffeeItem.id === parsedId
     );
-    setCoffe(cardDetailData);
+    setCoffe(findedCard);
+    const favouriteList = getFromFavourite();
+    const isExist = favouriteList.find((item) => item.id === findedCard.id);
+    if (isExist) {
+      setIsFavourite(true);
+    }
   }, [coffeesLoaderData, parsedId]);
 
   const { id, name, image, description, category } = coffee;
@@ -26,6 +31,7 @@ const CardDetail = () => {
 
   const handleAddToFavourite = (coffee) => {
     addToFavourite(coffee);
+    setIsFavourite(true);
     // ==========only use for debug=========
     // getFromFavourite(coffee);
   };
@@ -45,6 +51,7 @@ const CardDetail = () => {
               </div>
               <p className="py-6">{description}</p>
               <button
+                disabled={isFavourite}
                 onClick={() => handleAddToFavourite(coffee)}
                 className="btn btn-error"
               >
