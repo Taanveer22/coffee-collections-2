@@ -1,4 +1,4 @@
-const OneCard = ({ coffeeItem }) => {
+const Card = ({ coffeeItem }) => {
   const { name, image, category, rating, popularity, description } = coffeeItem;
   return (
     <div>
@@ -22,4 +22,4 @@ const OneCard = ({ coffeeItem }) => {
   );
 };
 
-export default OneCard;
+export default Card;
