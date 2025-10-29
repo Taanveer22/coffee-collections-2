@@ -5,7 +5,7 @@ const Banner = () => {
         <div className="hero-overlay"></div>
         <div className="hero-content text-neutral-content text-center">
           <div className="max-w-md">
-            <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
+            <h1 className="mb-5 text-5xl font-bold">Hello everyone</h1>
             <p className="mb-5 text-justify">
               Where stories are brewed and magic is poured. In our enchanted
               space, every drink is a potion and every visit is an adventure.
